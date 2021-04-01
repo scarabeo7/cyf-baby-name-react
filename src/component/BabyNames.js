@@ -1,20 +1,17 @@
 import React from "react";
+import NameList from "./NameList";
 
-const BabyNames = (props) => {
-    // baby names sorted alphabetically
-  const SortedBabyNames = props.babyNamesData.sort((a, b) => {
-      if(a.name < b.name){
-          return -1;
-      }else{
-          return 1
-      }
-  });
-
+const BabyNames = ({ babyNamesData, searchVAl, favorite, setFavorite }) => {
+  const filteredNames = babyNamesData
+    .filter((data) => data.name.toLowerCase().includes(searchVAl.toLowerCase()))
+    .filter((data) => !favorite.includes(data.id));
+  const handleFavorite = (id) => {
+    setFavorite([...favorite, id]);
+  };
   return (
-    <div className="data">
-      {SortedBabyNames.map((el, index) => (
-        <p className = {el.sex} key={index}>{el.name}</p>
-      ))}
+    <div>
+      <hr />
+      <NameList nameList={filteredNames} onNameClick={handleFavorite} />
     </div>
   );
 };

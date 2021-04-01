@@ -1,16 +1,13 @@
 .App {
-  
   text-align: center;
 }
 
 .data {
-  border: 1rem solid green;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 1rem;
 }
 
-.search-bar{
+.search-bar {
   font-size: 2rem;
   width: 40%;
   margin: 1% auto;
@@ -19,19 +16,21 @@
   color: #181c2b;
 }
 
-.m{
+.m {
   background-color: blue;
 }
 
-.f{
+.f {
   background-color: rgb(226, 43, 156);
 }
 
-.m, .f {
+.m,
+.f {
   padding: 1rem;
   width: auto;
   border-radius: 0.5rem;
   margin: 3px;
 }
-
-
+p {
+  cursor: pointer;
+}
