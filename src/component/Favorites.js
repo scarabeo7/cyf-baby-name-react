@@ -9,7 +9,7 @@ const Favorites = ({ names, favorite, setFavorite }) => {
 
   return (
     <div className="favorite">
-      <h4>Click on favourite names...</h4>
+      <h4>Click on some names to add to your favorite list...</h4>
       <NameList nameList={favoriteNames} onNameClick={removeFavNames} />
     </div>
   );

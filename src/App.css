@@ -5,6 +5,7 @@
 .data {
   display: flex;
   flex-wrap: wrap;
+  justify-content:space-around;
 }
 
 .search-bar {
@@ -33,4 +34,7 @@
 }
 p {
   cursor: pointer;
+}
+h4{
+  color: gray;
 }
