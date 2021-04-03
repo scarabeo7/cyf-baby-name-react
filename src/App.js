@@ -18,7 +18,7 @@ function App() {
 
   const [searchVAl, setSearchVAl] = useState("");
   const [favorite, setFavorite] = useState([]);
-  const [gender, setGender] = useState("mf");
+  const [gender, setGender] = useState("");
 
   return (
     <div className="App">
@@ -28,7 +28,6 @@ function App() {
         setSearchVAl={setSearchVAl}
         genders={gender}
         setGender={setGender}
-        SortBabyNames={SortBabyNames}
       />
       <Favorites
         favorite={favorite}
@@ -40,6 +39,7 @@ function App() {
         searchVAl={searchVAl}
         favorite={favorite}
         setFavorite={setFavorite}
+        gender={gender}
       />
     </div>
   );

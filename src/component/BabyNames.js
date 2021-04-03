@@ -1,10 +1,11 @@
 import React from "react";
 import NameList from "./NameList";
 
-const BabyNames = ({ babyNamesData, searchVAl, favorite, setFavorite }) => {
+const BabyNames = ({ babyNamesData, searchVAl, favorite, setFavorite, gender }) => {
   const filteredNames = babyNamesData
     .filter((data) => data.name.toLowerCase().includes(searchVAl.toLowerCase()))
-    .filter((data) => !favorite.includes(data.id));
+    .filter((data) => !favorite.includes(data.id))
+    .filter(data => gender ? data.sex === gender:true);
   const handleFavorite = (id) => {
     setFavorite([...favorite, id]);
   };

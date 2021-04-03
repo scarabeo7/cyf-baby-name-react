@@ -3,16 +3,13 @@ import React from "react";
 const SearchName = ({
   searchVal,
   setSearchVAl,
-  gender,
   setGender,
-  SortBabyNames,
 }) => {
   const handleSearch = (e) => {
     setSearchVAl(e.target.value);
   };
-  const handleGenderSort = (e) => {
-    e.preventDefault();
-    console.log(e.target.innerText);
+  const handleGenderSort = (data) => {
+    setGender(data)
   };
   return (
     <div>
@@ -23,13 +20,19 @@ const SearchName = ({
         onChange={handleSearch}
         value={searchVal}
       />
-      <button className="btn btn-dark m-2" onClick={handleGenderSort}>
+      <button className="btn btn-dark m-2" onClick={() => handleGenderSort("")}>
         All
       </button>
-      <button className="btn btn-danger m-2" onClick={handleGenderSort}>
+      <button
+        className="btn btn-danger m-2"
+        onClick={() => handleGenderSort("f")}
+      >
         Girls
       </button>
-      <button className="btn btn-primary m-2" onClick={handleGenderSort}>
+      <button
+        className="btn btn-primary m-2"
+        onClick={() => handleGenderSort("m")}
+      >
         Boys
       </button>
     </div>
